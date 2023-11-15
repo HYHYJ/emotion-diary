@@ -16,6 +16,11 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <h2>App.js</h2>
+        <img src={process.env.PUBLIC_URL + `/assets/emotion1.png`} />
+        <img src={process.env.PUBLIC_URL + `/assets/emotion2.png`} />
+        <img src={process.env.PUBLIC_URL + `/assets/emotion3.png`} />
+        <img src={process.env.PUBLIC_URL + `/assets/emotion4.png`} />
+        <img src={process.env.PUBLIC_URL + `/assets/emotion5.png`} />
         {/*⭐ Routes에 Route 태그 넣기 */}
         <Routes>
           {/*⭐경로에 따라 맵핑 */}
