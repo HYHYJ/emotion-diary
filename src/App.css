@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&family=Noto+Sans+KR:wght@300&display=swap');
 body{
   background-color: #f6f6f6;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Gothic A1', sans-serif;
+
   min-height: 100vh;
   margin: 0px;
 }
 .App{
   padding: 20px;
-  font-family: 'Nanum Pen Script', cursive;
-  font-family: 'Yeon Sung', cursive;
+  
+  font-family: 'Gothic A1', sans-serif;
 }
 /* 반응형 */
 @media (min-width : 650px) {
@@ -34,4 +35,60 @@ body{
 
 .App {
   min-height: 100vh;
+}
+
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 20px;
+  font-size: 10px;
+  
+  white-space: nowrap;
+  font-family: 'Gothic A1', sans-serif;
+}
+
+.MyButton_default {
+  background-color:  #ececec;
+  color: black;
+}
+
+.MyButton_positive {
+  background-color:  #64c964;
+  color: white;
+}
+.MyButton_negative {
+  background-color:  #fd565f;
+  color: white;
+}
+
+/* 헤더 */
+
+header{
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+
+}
+
+header > div {
+  display: flex;
+}
+
+header .head_text{
+  width: 50%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+header .head_btn_left{
+  width: 25%;
+  justify-content: start;
+}
+header .head_btn_right{
+  width: 25%;
+  justify-content: end;
+
 }
