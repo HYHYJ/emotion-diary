@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import MyButton from "./MyButton";
+import DiaryItem from "./DiaryItem";
 
 const sortOPtionList = [
   { value: "lastest", name: "최신순" },
@@ -13,7 +16,11 @@ const filterOptionList = [
 
 const ControlMenu = ({ value, onChage, optionList }) => {
   return (
-    <select value={value} onChange={(e) => onChage(e.target.value)}>
+    <select
+      className="ControlMenu"
+      value={value}
+      onChange={(e) => onChage(e.target.value)}
+    >
       {optionList.map((it, idx) => (
         <option key={idx} value={it.value}>
           {it.name}
@@ -24,6 +31,7 @@ const ControlMenu = ({ value, onChage, optionList }) => {
 };
 
 const DiaryList = ({ diaryList }) => {
+  const navigate = useNavigate();
   const [sortType, setSortType] = useState("lastest");
   const [filter, setFilter] = useState("all");
 
@@ -51,20 +59,34 @@ const DiaryList = ({ diaryList }) => {
     return sortedList;
   };
   return (
-    <div>
-      <ControlMenu
-        value={sortType}
-        onChage={setSortType}
-        optionList={sortOPtionList}
-      />
-      <ControlMenu
-        value={filter}
-        onChage={setFilter}
-        optionList={filterOptionList}
-      />
+    <div className="DiaryList">
+      <div className="menu_wrapper">
+        <div className="left_col">
+          <ControlMenu
+            className="ControlMenu"
+            value={sortType}
+            onChage={setSortType}
+            optionList={sortOPtionList}
+          />
+          <ControlMenu
+            className="ControlMenu"
+            value={filter}
+            onChage={setFilter}
+            optionList={filterOptionList}
+          />
+        </div>
+        <div className="right_col">
+          <MyButton
+            type={"positive"}
+            text={"새 일기 쓰기"}
+            onClick={() => navigate("/new")}
+          />
+        </div>
+      </div>
+
       {getProcessdDiaryList().map((it) => (
         <div key={it.id}>
-          {it.content} {it.emotion}
+          <DiaryItem key={it.id} emotion={it.emotion} {...it} />
         </div>
       ))}
     </div>
