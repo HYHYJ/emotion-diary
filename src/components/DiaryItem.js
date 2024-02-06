@@ -6,7 +6,7 @@ function DiaryItem({ id, emotion, content, date }) {
 
   const env = process.env;
   env.PUBLIC_URL = env.PUBLIC_URL || "";
-  console.log({ ...emotion });
+
   const strDate = new Date(parseInt(date)).toLocaleDateString();
 
   const goDetail = () => {

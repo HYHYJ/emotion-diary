@@ -5,7 +5,7 @@ const Diary = () => {
   // ✏️패스 베리어블(id)을 꺼내쓸수있음
   // ✏️페이지 번호가 1 이면 1을 꺼냄
   const { id } = useParams();
-  console.log(id);
+
   return (
     <div>
       <h1>Diary</h1>

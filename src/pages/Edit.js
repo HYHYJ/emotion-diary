@@ -7,10 +7,9 @@ const Edit = () => {
   const [searchParams, setsearchParams] = useSearchParams();
   //✏️get을 써서 전달받은 쿼리 스크링을 전달 받을 수 있다.
   const id = searchParams.get("id");
-  console.log(id);
 
   const mode = searchParams.get("mode");
-  console.log(mode);
+
   return (
     <div>
       <h1>Edit</h1>
